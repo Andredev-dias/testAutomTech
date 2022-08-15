@@ -10,7 +10,7 @@
   --words: #616161;
   --inputInfo: #8e8e949d;
   --fontSizeTitles: 1.2rem;
-  --fontSizeInfos: 0.8rem;
+  --fontSizeInfos: 0.9rem;
 }
 
 html,
@@ -41,6 +41,7 @@ section {
   background-color: var(--sections);
   padding: 1vw;
   border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .wrapLabelAndInput {
@@ -57,4 +58,18 @@ section {
   font-size: var(--fontSizeTitles);
   color: var(--words);
   font-weight: 500;
+}
+
+.wrapRadioLabelAndValue {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: left;
+  gap: 10px;
+}
+
+.wrapRadioLabelAndValue label {
+  margin-right: 20px;
+  font-size: var(--fontSizeInfos);
+  color: var(--inputInfo);
 }

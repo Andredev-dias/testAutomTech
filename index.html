@@ -38,21 +38,27 @@
       </div>
       <div class="wrapLabelAndInput">
         <label>Direção</label>
-        <input
-          type="radio"
-          id="hour"
-          value="hourValue" />
-        <label for="hour">Horário</label><br />
+        <div class="wrapRadioLabelAndValue">
+          <input
+            type="radio"
+            id="hour"
+            value="hour"
+            name="direction"
+          />
+          <label for="hour">Horário</label>
 
-        <input
-          type="radio"
-          id="antiHour"
-          value="antiHourValue"
-        />
-        <label for="antiHour">Anti-Horário</label><br />
+          <input
+            type="radio"
+            id="antiHour"
+            value="antiHour"
+            name="direction"
+          />
+          <label for="antiHour">Anti-Horário</label>
+        </div>
       </div>
     </section>
     <section>
+      <div class="wrapLabelAndInput">
         <label for="angle">Ângulo da plataforma</label>
         <input
           type="range"
@@ -65,12 +71,12 @@
         />
       </div>
       <div>
-          <button>◀</button>
-          <button>▶</button>
+        <button>◀</button>
+        <button>▶</button>
       </div>
     </section>
     <section>
-        <button>INICIAR</button>
+      <button>INICIAR</button>
     </section>
   </body>
 </html>
