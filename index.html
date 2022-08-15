@@ -24,81 +24,94 @@
     />
   </head>
   <body>
-    <section>
-      <div class="wrapLabelAndInput">
-        <label for="velocity">Velocidade</label>
-        <div class="range-wrap">
-          <div class="range-value" id="rangeV"></div>
-          <input
-            id="range"
-            type="range"
-            min="0"
-            max="120"
-            value="50"
-            step="1"
-          />
+    <form
+      name="formOpen"
+      action="index.html"
+      method="POST"
+      onsubmit="return alertOpen()"
+    >
+      <section>
+        <div class="wrapLabelAndInput">
+          <label for="velocity">Velocidade</label>
+          <div class="range-wrap">
+            <div class="range-value" id="rangeV"></div>
+            <input
+              id="range"
+              type="range"
+              min="0"
+              max="120"
+              value="50"
+              step="1"
+            />
+          </div>
         </div>
-      </div>
-      <div class="wrapLabelAndInput">
-        <label for="velocity">Quantidade de fotos</label>
-        <div class="range-wrap">
-          <div class="range-value" id="rangeV2"></div>
-          <input
-            id="range2"
-            type="range"
-            min="0"
-            max="60"
-            value="25"
-            step="1"
-          />
+        <div class="wrapLabelAndInput">
+          <label for="velocity">Quantidade de fotos</label>
+          <div class="range-wrap">
+            <div class="range-value" id="rangeV2"></div>
+            <input
+              id="range2"
+              type="range"
+              min="0"
+              max="60"
+              value="25"
+              step="1"
+            />
+          </div>
         </div>
-      </div>
-      <div class="wrapLabelAndInput">
-        <label>Direção</label>
-        <div class="wrapRadioLabelAndValue">
-          <input
-            type="radio"
-            id="hour"
-            value="hour"
-            name="direction"
-            checked
-          />
-          <label for="hour">Horário</label>
+        <div class="wrapLabelAndInput">
+          <label>Direção</label>
+          <div class="wrapRadioLabelAndValue">
+            <input
+              type="radio"
+              id="hour"
+              value="Horário"
+              name="direction"
+              checked
+            />
+            <label for="hour">Horário</label>
 
-          <input
-            type="radio"
-            id="antiHour"
-            value="antiHour"
-            name="direction"
-          />
-          <label for="antiHour">Anti-Horário</label>
+            <input
+              type="radio"
+              id="hour"
+              value="Anti-Horário"
+              name="direction"
+            />
+            <label for="hour">Anti-Horário</label>
+          </div>
         </div>
-      </div>
-    </section>
-    <section>
-      <div class="wrapLabelAndInput">
-        <label for="range3">Ângulo da plataforma</label>
-        <div class="range-wrap">
-          <div class="range-value" id="rangeV3"></div>
-          <input
-            id="range3"
-            type="range"
-            min="0"
-            max="360"
-            value="180"
-            step="1"
-          />
+      </section>
+      <section>
+        <div class="wrapLabelAndInput">
+          <label for="range3">Ângulo da plataforma</label>
+          <div class="range-wrap">
+            <div class="range-value" id="rangeV3"></div>
+            <input
+              id="range3"
+              type="range"
+              min="0"
+              max="360"
+              value="180"
+              step="1"
+            />
+          </div>
         </div>
+        <div class="wrapArrowBtns">
+          <div class="arrowDiv">◀</div>
+          <div class="arrowDiv">▶</div>
+        </div>
+      </section>
+      <div class="wrapBtnStart">
+        <button
+          type="submit"
+          name="submit"
+          value="start"
+          class="btnIStart"
+        >
+          Iniciar
+        </button>
       </div>
-      <div class="wrapArrowBtns">
-        <button oninput="">◀</button>
-        <button>▶</button>
-      </div>
-    </section>
-    <div class="wrapBtnStart">
-      <button class="btnIStart">Iniciar</button>
-    </div>
-
+    </form>
     <script>
       const range = document.getElementById("range"),
         rangeV = document.getElementById("rangeV");
@@ -150,6 +163,33 @@
       range.addEventListener("input", setValue);
       range2.addEventListener("input", setValue2);
       range3.addEventListener("input", setValue3);
+    </script>
+    <script type="text/javascript">
+      function alertOpen() {
+        var form = document.forms["formOpen"];
+        var range = form.range.value;
+        var range2 = form.range2.value;
+        var range3 = form.range3.value;
+        var hour = form.hour.value;
+
+        alert(
+          "Velocidade: " +
+            range +
+            " rpm" +
+            " | " +
+            "Quantidade de fotos: " +
+            range2 +
+            " Fotos" +
+            " | " +
+            "Ângulo da plataforma: " +
+            range3 +
+            " °" +
+            " | " +
+            "Direção: " +
+            hour
+        );
+        return false;
+      }
     </script>
   </body>
 </html>
