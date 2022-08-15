@@ -11,6 +11,8 @@
   --inputInfo: #8e8e949d;
   --fontSizeTitles: 1.2rem;
   --fontSizeInfos: 0.9rem;
+  --btnBackground: #0071e3;
+  --btnWords: #ffffff;
 }
 
 html,
@@ -31,6 +33,10 @@ body {
   height: 100vh;
 }
 
+input:hover {
+  cursor: pointer;
+}
+
 section {
   display: flex;
   flex-direction: column;
@@ -39,9 +45,9 @@ section {
   width: 30%;
   height: auto;
   background-color: var(--sections);
-  padding: 1vw;
+  padding: 2vw;
   border-radius: 10px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: 0px 2px 8px 0px rgba(99, 99, 99, 0.2);
 }
 
 .wrapLabelAndInput {
@@ -51,7 +57,11 @@ section {
   align-items: left;
   width: 100%;
   gap: 5px;
-  margin-bottom: 5vh;
+  margin-bottom: 3vh;
+}
+
+.wrapLabelAndInput:nth-last-child(3n - 2) {
+  margin-bottom: 0;
 }
 
 .wrapLabelAndInput label {
@@ -72,4 +82,90 @@ section {
   margin-right: 20px;
   font-size: var(--fontSizeInfos);
   color: var(--inputInfo);
+}
+
+input[type="range"] {
+  width: 100%;
+  height: 3px;
+  background-color: #b7babc;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  border: none;
+  border-radius: 3px;
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  background-color: #b7babc;
+}
+
+.wrapArrowBtns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.wrapArrowBtns button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  background-color: var(--btnBackground);
+  color: var(--btnWords);
+  border-radius: 5px;
+  border: none;
+  font-size: var(--fontSizeTitles);
+  text-shadow: 0px 2px 8px 0px rgba(252, 252, 252, 0.562);
+  opacity: 0.9;
+}
+
+.wrapArrowBtns button:hover {
+  cursor: pointer;
+  box-shadow: 0px 2px 8px 0px rgba(99, 99, 99, 0.6);
+  transition: all 200ms ease-in-out;
+  opacity: 1;
+}
+
+.wrapBtnStart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: auto;
+  padding: 2vw;
+}
+
+.btnIStart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 55%;
+  height: 40px;
+  padding: 10px;
+  background-color: var(--btnBackground);
+  color: var(--btnWords);
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  text-shadow: 0px 2px 8px 0px rgba(252, 252, 252, 0.562);
+  border-radius: 5px;
+  border: none;
+  opacity: 0.9;
+}
+
+.btnIStart:hover {
+  cursor: pointer;
+  box-shadow: 0px 2px 8px 0px rgba(99, 99, 99, 0.6);
+  transition: all 200ms ease-in-out;
+  opacity: 1;
 }
