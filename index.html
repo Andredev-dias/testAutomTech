@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Autom Tech Test</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section>
+      <div class="wrapLabelAndInput">
+        <label for="velocity">Velocidade</label>
+        <input
+          type="range"
+          id="velocity"
+          name="velo"
+          min="0"
+          max="100"
+          value="70"
+          step="10"
+        />
+      </div>
+      <div class="wrapLabelAndInput">
+        <label for="velocity">Quantidade de fotos</label>
+        <input
+          type="range"
+          id="Quantidade de fotos"
+          name="qtd"
+          min="0"
+          max="100"
+          value="25"
+          step="10"
+        />
+      </div>
+      <div class="wrapLabelAndInput">
+        <label>Direção</label>
+        <input
+          type="radio"
+          id="hour"
+          value="hourValue" />
+        <label for="hour">Horário</label><br />
+
+        <input
+          type="radio"
+          id="antiHour"
+          value="antiHourValue"
+        />
+        <label for="antiHour">Anti-Horário</label><br />
+      </div>
+    </section>
+    <section>
+        <label for="angle">Ângulo da plataforma</label>
+        <input
+          type="range"
+          id="angle"
+          name="angleValue"
+          min="0"
+          max="360"
+          value="180"
+          step="2"
+        />
+      </div>
+      <div>
+          <button>◀</button>
+          <button>▶</button>
+      </div>
+    </section>
+    <section>
+        <button>INICIAR</button>
+    </section>
+  </body>
+</html>
