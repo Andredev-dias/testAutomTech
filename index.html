@@ -14,27 +14,31 @@
     <section>
       <div class="wrapLabelAndInput">
         <label for="velocity">Velocidade</label>
-        <input
-          type="range"
-          id="velocity"
-          name="velo"
-          min="0"
-          max="100"
-          value="70"
-          step="10"
-        />
+        <div class="range-wrap">
+          <div class="range-value" id="rangeV"></div>
+          <input
+            id="range"
+            type="range"
+            min="0"
+            max="120"
+            value="50"
+            step="1"
+          />
+        </div>
       </div>
       <div class="wrapLabelAndInput">
         <label for="velocity">Quantidade de fotos</label>
-        <input
-          type="range"
-          id="Quantidade de fotos"
-          name="qtd"
-          min="0"
-          max="100"
-          value="25"
-          step="10"
-        />
+        <div class="range-wrap">
+          <div class="range-value" id="rangeV2"></div>
+          <input
+            id="range2"
+            type="range"
+            min="0"
+            max="65"
+            value="25"
+            step="1"
+          />
+        </div>
       </div>
       <div class="wrapLabelAndInput">
         <label>Direção</label>
@@ -60,16 +64,18 @@
     </section>
     <section>
       <div class="wrapLabelAndInput">
-        <label for="angle">Ângulo da plataforma</label>
-        <input
-          type="range"
-          id="angle"
-          name="angleValue"
-          min="0"
-          max="360"
-          value="180"
-          step="2"
-        />
+        <label for="range3">Ângulo da plataforma</label>
+        <div class="range-wrap">
+          <div class="range-value" id="rangeV3"></div>
+          <input
+            id="range3"
+            type="range"
+            min="0"
+            max="360"
+            value="180"
+            step="1"
+          />
+        </div>
       </div>
       <div class="wrapArrowBtns">
         <button>◀</button>
@@ -79,5 +85,58 @@
     <div class="wrapBtnStart">
       <button class="btnIStart">Iniciar</button>
     </div>
+
+    <script>
+      const range = document.getElementById("range"),
+        rangeV = document.getElementById("rangeV");
+      const range2 = document.getElementById("range2"),
+        rangeV2 = document.getElementById("rangeV2");
+      const range3 = document.getElementById("range3"),
+        rangeV3 = document.getElementById("rangeV3");
+      setValue = () => {
+        const newValue = Number(
+            ((range.value - range.min) * 100) /
+              (range.max - range.min)
+          ),
+          newPosition = 10 - newValue * 0.2;
+        rangeV.innerHTML = `<span>${range.value}</span>`;
+        rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`;
+      };
+
+      setValue2 = () => {
+        const newValue2 = Number(
+            ((range2.value - range2.min) * 100) /
+              (range2.max - range2.min)
+          ),
+          newPosition2 = 10 - newValue2 * 0.2;
+        rangeV2.innerHTML = `<span>${range2.value}</span>`;
+        rangeV2.style.left = `calc(${newValue2}% + (${newPosition2}px))`;
+      };
+
+      setValue3 = () => {
+        const newValue3 = Number(
+            ((range3.value - range3.min) * 100) /
+              (range3.max - range3.min)
+          ),
+          newPosition3 = 10 - newValue3 * 0.2;
+        rangeV3.innerHTML = `<span>${range3.value}</span>`;
+        rangeV3.style.left = `calc(${newValue3}% + (${newPosition3}px))`;
+      };
+      document.addEventListener(
+        "DOMContentLoaded",
+        setValue
+      );
+      document.addEventListener(
+        "DOMContentLoaded",
+        setValue2
+      );
+      document.addEventListener(
+        "DOMContentLoaded",
+        setValue3
+      );
+      range.addEventListener("input", setValue);
+      range2.addEventListener("input", setValue2);
+      range3.addEventListener("input", setValue3);
+    </script>
   </body>
 </html>
