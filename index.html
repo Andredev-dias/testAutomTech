@@ -9,6 +9,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Autom Tech Test</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <section>
@@ -34,7 +47,7 @@
             id="range2"
             type="range"
             min="0"
-            max="65"
+            max="60"
             value="25"
             step="1"
           />
@@ -78,7 +91,7 @@
         </div>
       </div>
       <div class="wrapArrowBtns">
-        <button>◀</button>
+        <button oninput="">◀</button>
         <button>▶</button>
       </div>
     </section>
@@ -99,7 +112,7 @@
               (range.max - range.min)
           ),
           newPosition = 10 - newValue * 0.2;
-        rangeV.innerHTML = `<span>${range.value}</span>`;
+        rangeV.innerHTML = `<span>${range.value} rpm</span>`;
         rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`;
       };
 
@@ -109,7 +122,7 @@
               (range2.max - range2.min)
           ),
           newPosition2 = 10 - newValue2 * 0.2;
-        rangeV2.innerHTML = `<span>${range2.value}</span>`;
+        rangeV2.innerHTML = `<span>${range2.value} Fotos</span>`;
         rangeV2.style.left = `calc(${newValue2}% + (${newPosition2}px))`;
       };
 
@@ -119,7 +132,7 @@
               (range3.max - range3.min)
           ),
           newPosition3 = 10 - newValue3 * 0.2;
-        rangeV3.innerHTML = `<span>${range3.value}</span>`;
+        rangeV3.innerHTML = `<span>${range3.value} °</span>`;
         rangeV3.style.left = `calc(${newValue3}% + (${newPosition3}px))`;
       };
       document.addEventListener(
