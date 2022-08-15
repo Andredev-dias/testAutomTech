@@ -7,10 +7,10 @@
 :root {
   --background: #ffffff;
   --sections: #f9f9f9;
-  --words: #141416;
-  --inputInfo: #8e8e94b7;
-  --fontSizeTitles: 2rem;
-  --fontSizeInfos: 1rem;
+  --words: #616161;
+  --inputInfo: #8e8e949d;
+  --fontSizeTitles: 1.2rem;
+  --fontSizeInfos: 0.8rem;
 }
 
 html,
@@ -37,8 +37,10 @@ section {
   justify-content: center;
   align-items: center;
   width: 30%;
-  /* background-color: var(--sections); */
-  background-color: red;
+  height: auto;
+  background-color: var(--sections);
+  padding: 1vw;
+  border-radius: 10px;
 }
 
 .wrapLabelAndInput {
@@ -46,4 +48,13 @@ section {
   flex-direction: column;
   justify-content: left;
   align-items: left;
+  width: 100%;
+  gap: 5px;
+  margin-bottom: 5vh;
+}
+
+.wrapLabelAndInput label {
+  font-size: var(--fontSizeTitles);
+  color: var(--words);
+  font-weight: 500;
 }
